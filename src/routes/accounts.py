@@ -35,8 +35,6 @@ from security.interfaces import JWTAuthManagerInterface
 
 router = APIRouter()
 
-router = APIRouter()
-
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 
 
