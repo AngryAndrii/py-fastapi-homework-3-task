@@ -230,8 +230,8 @@ async def request_password_reset_token(
     responses={
         400: {
             "description": (
-                    "Bad Request - The provided email or token is invalid, "
-                    "the token has expired, or the user account is not active."
+                "Bad Request - The provided email or token is invalid, "
+                "the token has expired, or the user account is not active."
             ),
             "content": {
                 "application/json": {
@@ -444,7 +444,6 @@ async def refresh_access_token(
         db: AsyncSession = Depends(get_db),
         jwt_manager: JWTAuthManagerInterface = Depends(get_jwt_auth_manager),
 ) -> TokenRefreshResponseSchema:
-
     try:
         decoded_token = jwt_manager.decode_refresh_token(
             token_data.refresh_token)
