@@ -169,7 +169,7 @@ class TokenBaseModel(Base):
         nullable=False,
         default=generate_secure_token
     )
-    expires_at: Mapped[datetime] = mapped_column(
+    expires_at = mapped_column(
         DateTime(timezone=True),
         nullable=False,
         default=lambda: datetime.now(timezone.utc) + timedelta(days=1)
